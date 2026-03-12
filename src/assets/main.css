@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+/* ====== Theme (Tailwind v4 CSS-first) ====== */
+@theme {
+  --color-accent: #084C3B;
+  --color-accent-hover: #06362a;
+  --color-accent-light: #E8F5F0;
+  --color-charcoal: #1A1A1A;
+  --color-border: #E5E5E5;
+  --color-txt-secondary: #555555;
+  --color-cream: #F5F3EE;
+  --color-warm-gray: #F5F4F0;
+
+  --font-onest: 'Onest', system-ui, sans-serif;
+
+  --radius-4xl: 2rem;
+}
+
+/* Tailwind v4 preflight handles the CSS reset */
+
+/* ====== Lenis ====== */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-scrolling iframe { pointer-events: none; }
+
+/* ====== Nav ====== */
+.nav-blur {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.mobile-nav-panel {
+  position: fixed; top: 3.5rem; left: 0; right: 0;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  padding: 1.5rem 1.5rem 2rem;
+  display: none; flex-direction: column; gap: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.mobile-nav-panel.open { display: flex; }
+
+/* ====== Cursor Glow ====== */
+.cursor-glow {
+  position: fixed; width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(8, 76, 59, 0.05) 0%, transparent 70%);
+  pointer-events: none; transform: translate(-50%, -50%); z-index: 0;
+}
+@media (max-width: 768px) { .cursor-glow { display: none; } }
+
+/* ====== Scroll Progress ====== */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--color-accent); transform-origin: left; transform: scaleX(0); z-index: 100;
+}
+
+/* ====== Hero Text Mask ====== */
+.line-mask { display: block; overflow: hidden; line-height: 1.1; }
+.line-mask > span { display: block; transform: translateY(110%); }
+
+/* ====== Stagger Fade ====== */
+.stagger-fade > * { opacity: 0; transform: translateY(20px); }
+
+/* ====== Floating Labels ====== */
+.floating-label { cursor: default; will-change: transform; backface-visibility: hidden; }
+
+/* ====== Gallery ====== */
+.gallery-item img {
+  filter: grayscale(0.3);
+  transition: filter 0.6s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.gallery-item:hover img { filter: grayscale(0); transform: scale(1.04); }
+
+/* ====== Lightbox ====== */
+.lightbox-overlay {
+  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.9);
+  z-index: 200; display: none; align-items: center; justify-content: center; cursor: zoom-out;
+}
+.lightbox-overlay.active { display: flex; }
+.lightbox-overlay img { max-width: 90vw; max-height: 90vh; border-radius: 1rem; object-fit: contain; }
+
+/* ====== Card Hovers ====== */
+.feature-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.feature-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06); }
+
+.activity-card { transition: background 0.4s ease, transform 0.3s ease; }
+.activity-card:hover { background: var(--color-cream); transform: translateY(-2px); }
+
+.blog-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.blog-card:hover { transform: translateY(-3px); }
+
+/* ====== Notion-style table ====== */
+.notion-table { border-collapse: collapse; width: 100%; }
+.notion-table th, .notion-table td {
+  padding: 0.75rem 1rem; border: 1px solid var(--color-border); text-align: left; font-size: 0.8rem;
+}
+.notion-table th { background: var(--color-cream); font-weight: 600; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-txt-secondary); }
+
+/* ====== Forms ====== */
+input:focus, textarea:focus, select:focus {
+  outline: none; border-color: var(--color-accent) !important;
+  box-shadow: 0 0 0 3px rgba(8, 76, 59, 0.08);
+}
+
+/* ====== Magnetic Button ====== */
+.magnetic-btn { will-change: transform; backface-visibility: hidden; }
+
+/* ====== Marquee ====== */
+.marquee-track { display: flex; align-items: center; width: max-content; }
+.marquee-track > * { margin-right: 1.5rem; }
+.marquee-track > span.text-sm { color: rgba(8, 76, 59, 0.6); }
+.marquee-track > span:not(.text-sm) { color: rgba(8, 76, 59, 0.35); }
+
+/* ====== HR Animate ====== */
+.hr-animate { height: 1px; background: var(--color-border); transform-origin: left; transform: scaleX(0); }
+
+/* ====== Bento Grid ====== */
+.bento-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+@media (max-width: 768px) { .bento-grid { grid-template-columns: repeat(2, 1fr); } }
+.bento-item { overflow: hidden; border-radius: 1rem; }
+.bento-large { grid-column: span 2; grid-row: span 2; }
+.bento-tall { grid-row: span 2; }
+.bento-wide { grid-column: span 2; }
+
+/* ====== FAQ Accordion ====== */
+.faq-answer { height: 0; overflow: hidden; }
+.faq-chevron { transition: transform 0.3s ease; }
+.faq-chevron.open { transform: rotate(180deg); }
+
+/* ====== Filter Buttons ====== */
+.filter-btn { border-color: var(--color-border); background: white; color: var(--color-txt-secondary); }
+.filter-btn:hover { border-color: var(--color-charcoal); color: var(--color-charcoal); }
+.filter-btn.active { background: var(--color-accent); border-color: var(--color-accent); color: white; }
+
+/* ====== Line Clamp ====== */
+.line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* ====== Prose ====== */
+.prose p { margin-bottom: 0.75rem; }
+.prose h3 { color: var(--color-charcoal); }
+.prose ul { list-style-type: disc; padding-left: 1.25rem; }
+.prose li { margin-bottom: 0.25rem; }
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  .hero-collage { min-height: 350px !important; }
+  .hero-img-main { width: 55% !important; left: 2% !important; }
+  .hero-img-tr { width: 42% !important; right: 0 !important; top: 0 !important; }
+  .hero-img-br { width: 44% !important; right: 2% !important; }
+}
+
+/* ====== Selection ====== */
+::selection { background: rgba(8, 76, 59, 0.12); color: var(--color-charcoal); }
+
+/* ====== Scroll bar ====== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #ccc; }
