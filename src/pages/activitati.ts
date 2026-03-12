@@ -82,13 +82,10 @@ function renderPosts(): void {
     .join('')
 
   // Animate cards
-  gsap.from(grid.querySelectorAll('.blog-card'), {
-    opacity: 0,
-    y: 30,
-    duration: 0.6,
-    stagger: 0.1,
-    ease: 'power3.out',
-  })
+  gsap.fromTo(grid.querySelectorAll('.blog-card'),
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'power3.out' }
+  )
 
   // Attach click handlers
   grid.querySelectorAll<HTMLElement>('.blog-card').forEach((card) => {
@@ -225,9 +222,9 @@ export function mount(): () => void {
   document.querySelectorAll<HTMLElement>('.magnetic-btn').forEach((btn) => cleanups.push(magneticButton(btn)))
 
   // Hero animation
-  gsap.from('.bg-cream h1', { opacity: 0, y: 30, duration: 0.8, delay: 0.1, ease: 'power3.out' })
-  gsap.from('.bg-cream p', { opacity: 0, y: 20, duration: 0.7, delay: 0.25, ease: 'power3.out' })
-  gsap.from('.bg-cream .inline-flex', { opacity: 0, y: 10, duration: 0.5, delay: 0.05, ease: 'power3.out' })
+  gsap.fromTo('.bg-cream h1', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, delay: 0.1, ease: 'power3.out' })
+  gsap.fromTo('.bg-cream p', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7, delay: 0.25, ease: 'power3.out' })
+  gsap.fromTo('.bg-cream .inline-flex', { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5, delay: 0.05, ease: 'power3.out' })
 
   // Load posts
   fetchPosts().then((posts) => {

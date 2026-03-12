@@ -109,23 +109,26 @@ export function mount(): () => void {
 
   // Contact info animation
   gsap.utils.toArray<HTMLElement>('.contact-info > div').forEach((item, i) => {
-    gsap.from(item, {
-      opacity: 0, x: -24, duration: 0.5, delay: i * 0.08, ease: 'power3.out',
-      scrollTrigger: { trigger: item, start: 'top 90%', once: true },
-    })
+    gsap.fromTo(item,
+      { opacity: 0, x: -24 },
+      { opacity: 1, x: 0, duration: 0.5, delay: i * 0.08, ease: 'power3.out',
+        scrollTrigger: { trigger: item, start: 'top 90%', once: true } }
+    )
   })
 
   // Contact form
-  gsap.from('.contact-form', {
-    opacity: 0, y: 30, duration: 0.7, ease: 'power3.out',
-    scrollTrigger: { trigger: '.contact-form', start: 'top 85%', once: true },
-  })
+  gsap.fromTo('.contact-form',
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out',
+      scrollTrigger: { trigger: '.contact-form', start: 'top 85%', once: true } }
+  )
 
   // Map
-  gsap.from('.map-container', {
-    opacity: 0, y: 30, duration: 0.7, ease: 'power3.out',
-    scrollTrigger: { trigger: '.map-container', start: 'top 90%', once: true },
-  })
+  gsap.fromTo('.map-container',
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out',
+      scrollTrigger: { trigger: '.map-container', start: 'top 90%', once: true } }
+  )
 
   // Form submit
   const form = document.getElementById('contactForm')

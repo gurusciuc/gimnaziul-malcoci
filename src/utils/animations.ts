@@ -108,15 +108,16 @@ export function revealCards(selector: string, opts?: { x?: number; y?: number; s
   const o = { ...defaults, ...opts }
 
   gsap.utils.toArray<HTMLElement>(selector).forEach((card, i) => {
-    gsap.from(card, {
-      opacity: 0,
-      x: o.x,
-      y: o.y,
-      duration: 0.6,
-      delay: (i % 3) * o.stagger,
-      ease: 'power3.out',
-      scrollTrigger: { trigger: card, start: 'top 90%', once: true },
-    })
+    gsap.fromTo(card,
+      { opacity: 0, x: o.x, y: o.y },
+      {
+        opacity: 1, x: 0, y: 0,
+        duration: 0.6,
+        delay: (i % 3) * o.stagger,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: card, start: 'top 90%', once: true },
+      }
+    )
   })
 }
 
@@ -131,25 +132,25 @@ export function initMarquee(el: HTMLElement): void {
 
 /* ─── Hero Animations (index page) ─── */
 export function animateHero(): void {
-  gsap.from('.hero-subtitle', { opacity: 0, y: 16, duration: 0.6, delay: 0.15, ease: 'power3.out' })
+  gsap.fromTo('.hero-subtitle', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6, delay: 0.15, ease: 'power3.out' })
   gsap.utils.toArray<HTMLElement>('.line-mask > span').forEach((span, i) => {
     gsap.to(span, { y: 0, duration: 0.9, delay: 0.3 + i * 0.12, ease: 'power3.out' })
   })
-  gsap.from('.hero-pill', { opacity: 0, y: 16, duration: 0.6, delay: 0.75, ease: 'power3.out' })
-  gsap.from('.hero-btns', { opacity: 0, y: 20, duration: 0.7, delay: 0.9, ease: 'power3.out' })
+  gsap.fromTo('.hero-pill', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6, delay: 0.75, ease: 'power3.out' })
+  gsap.fromTo('.hero-btns', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7, delay: 0.9, ease: 'power3.out' })
 }
 
 /* ─── Hero Collage Images ─── */
 export function animateHeroCollage(): void {
-  gsap.from('.hero-img-main', { opacity: 0, y: 40, scale: 0.95, duration: 1, delay: 0.3, ease: 'power3.out' })
-  gsap.from('.hero-img-tr', { opacity: 0, x: 30, y: -20, scale: 0.9, duration: 0.9, delay: 0.55, ease: 'power3.out' })
-  gsap.from('.hero-img-br', { opacity: 0, x: 20, y: 30, scale: 0.9, duration: 0.9, delay: 0.7, ease: 'power3.out' })
+  gsap.fromTo('.hero-img-main', { opacity: 0, y: 40, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 1, delay: 0.3, ease: 'power3.out' })
+  gsap.fromTo('.hero-img-tr', { opacity: 0, x: 30, y: -20, scale: 0.9 }, { opacity: 1, x: 0, y: 0, scale: 1, duration: 0.9, delay: 0.55, ease: 'power3.out' })
+  gsap.fromTo('.hero-img-br', { opacity: 0, x: 20, y: 30, scale: 0.9 }, { opacity: 1, x: 0, y: 0, scale: 1, duration: 0.9, delay: 0.7, ease: 'power3.out' })
 }
 
 /* ─── Floating Labels ─── */
 export function animateFloatingLabels(): void {
   gsap.utils.toArray<HTMLElement>('.floating-label').forEach((label, i) => {
-    gsap.from(label, { opacity: 0, scale: 0.5, duration: 0.5, delay: 0.9 + i * 0.12, ease: 'back.out(2)' })
+    gsap.fromTo(label, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5, delay: 0.9 + i * 0.12, ease: 'back.out(2)' })
     gsap.to(label, {
       y: 'random(-8, 8)',
       x: 'random(-5, 5)',
@@ -164,29 +165,33 @@ export function animateFloatingLabels(): void {
 
 /* ─── Mission Section ─── */
 export function animateMission(): void {
-  gsap.from('.mission-img-1', { opacity: 0, y: 40, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: '.mission-visual', start: 'top 80%', once: true } })
-  gsap.from('.mission-img-2', { opacity: 0, x: 30, y: 20, scale: 0.9, duration: 0.8, delay: 0.15, ease: 'power3.out', scrollTrigger: { trigger: '.mission-visual', start: 'top 80%', once: true } })
-  gsap.from('.mission-badge', { opacity: 0, scale: 0.5, duration: 0.5, delay: 0.4, ease: 'back.out(2)', scrollTrigger: { trigger: '.mission-visual', start: 'top 80%', once: true } })
-  gsap.from('.mission-text', { opacity: 0, y: 20, duration: 0.6, ease: 'power3.out', scrollTrigger: { trigger: '.mission-text', start: 'top 88%', once: true } })
-  gsap.from('.mission-text-bold', { opacity: 0, y: 20, duration: 0.6, delay: 0.1, ease: 'power3.out', scrollTrigger: { trigger: '.mission-text-bold', start: 'top 88%', once: true } })
-  gsap.from('.mission-stats > div', { opacity: 0, y: 20, duration: 0.5, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: '.mission-stats', start: 'top 90%', once: true } })
+  gsap.fromTo('.mission-img-1', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: '.mission-visual', start: 'top 80%', once: true } })
+  gsap.fromTo('.mission-img-2', { opacity: 0, x: 30, y: 20, scale: 0.9 }, { opacity: 1, x: 0, y: 0, scale: 1, duration: 0.8, delay: 0.15, ease: 'power3.out', scrollTrigger: { trigger: '.mission-visual', start: 'top 80%', once: true } })
+  gsap.fromTo('.mission-badge', { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5, delay: 0.4, ease: 'back.out(2)', scrollTrigger: { trigger: '.mission-visual', start: 'top 80%', once: true } })
+  gsap.fromTo('.mission-text', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', scrollTrigger: { trigger: '.mission-text', start: 'top 88%', once: true } })
+  gsap.fromTo('.mission-text-bold', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, delay: 0.1, ease: 'power3.out', scrollTrigger: { trigger: '.mission-text-bold', start: 'top 88%', once: true } })
+  gsap.fromTo('.mission-stats > div', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: '.mission-stats', start: 'top 90%', once: true } })
 }
 
 /* ─── Gallery Items ─── */
 export function animateGalleryItems(): void {
   gsap.utils.toArray<HTMLElement>('.gallery-item').forEach((item, i) => {
-    gsap.from(item, {
-      opacity: 0, scale: 0.9, duration: 0.6, delay: (i % 4) * 0.07, ease: 'power3.out',
-      scrollTrigger: { trigger: item, start: 'top 92%', once: true },
-    })
+    gsap.fromTo(item,
+      { opacity: 0, scale: 0.9 },
+      {
+        opacity: 1, scale: 1, duration: 0.6, delay: (i % 4) * 0.07, ease: 'power3.out',
+        scrollTrigger: { trigger: item, start: 'top 92%', once: true },
+      }
+    )
   })
 }
 
 /* ─── Blog Cards ─── */
 export function animateBlogCards(container: HTMLElement): void {
-  gsap.from(container.querySelectorAll('.blog-card'), {
-    opacity: 0, y: 30, duration: 0.6, stagger: 0.1, ease: 'power3.out',
-  })
+  gsap.fromTo(container.querySelectorAll('.blog-card'),
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: 'power3.out' }
+  )
 }
 
 /* ─── Generic From ─── */

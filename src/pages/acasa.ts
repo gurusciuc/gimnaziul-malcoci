@@ -317,12 +317,6 @@ export function mount(): () => void {
 
   // Gallery preview
   revealCards('.preview-img', { y: 0, stagger: 0.07 })
-  gsap.utils.toArray<HTMLElement>('.preview-img').forEach((img, i) => {
-    gsap.from(img, {
-      opacity: 0, scale: 0.9, duration: 0.6, delay: i * 0.07, ease: 'power3.out',
-      scrollTrigger: { trigger: img, start: 'top 90%', once: true },
-    })
-  })
 
   // Blog preview
   const blogGrid = document.getElementById('homeBlogGrid')
