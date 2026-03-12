@@ -8,7 +8,7 @@ function toggleFaq(btn: HTMLElement): void {
   const chevron = btn.querySelector('.faq-chevron') as HTMLElement
   if (!answer || !chevron) return
 
-  const isOpen = answer.offsetHeight > 0 && !answer.classList.contains('h-0')
+  const isOpen = chevron.classList.contains('open')
   if (isOpen) {
     gsap.to(answer, { height: 0, duration: 0.3, ease: 'power2.inOut' })
     chevron.classList.remove('open')
