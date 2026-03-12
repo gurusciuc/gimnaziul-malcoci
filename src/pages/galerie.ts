@@ -58,7 +58,7 @@ export function render(): string {
       <div class="w-full max-w-7xl mx-auto px-6">
         <div class="max-w-2xl mx-auto text-center stagger-fade">
           <span class="text-xs font-semibold tracking-widest uppercase text-accent mb-3 block">Galerie</span>
-          <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-5">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-5">
             Momente din viața <span class="text-accent italic">școlii</span>
           </h1>
           <p class="text-base text-txt-secondary leading-relaxed max-w-lg mx-auto">Fotografii din activitățile, evenimentele și viața de zi cu zi a elevilor noștri.</p>

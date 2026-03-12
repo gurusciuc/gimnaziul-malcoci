@@ -158,7 +158,7 @@ export function render(): string {
           <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-semibold tracking-wide mb-6">
             <i class="ph-fill ph-newspaper text-sm"></i> Blog &amp; Noutăți
           </div>
-          <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-4">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-4">
             Activități și <span class="text-accent italic">Evenimente</span>
           </h1>
           <p class="text-base lg:text-lg text-txt-secondary leading-relaxed max-w-lg mx-auto">
@@ -193,7 +193,7 @@ export function render(): string {
   <div class="fixed inset-0 z-[200] bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4" id="postModal">
     <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
       <div class="relative">
-        <img id="modalImage" src="" alt="" class="w-full h-64 object-cover rounded-t-3xl">
+        <img id="modalImage" src="" alt="" class="w-full h-40 sm:h-64 object-cover rounded-t-3xl">
         <button id="modalCloseBtn" class="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center hover:bg-white transition-colors shadow-lg">
           <i class="ph ph-x text-lg text-charcoal"></i>
         </button>
@@ -201,7 +201,7 @@ export function render(): string {
           <span id="modalCategory" class="px-3 py-1 rounded-full text-xs font-semibold bg-white/90 backdrop-blur text-accent"></span>
         </div>
       </div>
-      <div class="p-8">
+      <div class="p-4 sm:p-8">
         <div class="flex items-center gap-3 text-xs text-txt-secondary mb-4">
           <span class="flex items-center gap-1"><i class="ph ph-calendar-blank"></i> <span id="modalDate"></span></span>
           <span class="w-1 h-1 rounded-full bg-border"></span>

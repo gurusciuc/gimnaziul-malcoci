@@ -56,7 +56,7 @@ export function render(): string {
             <p class="hero-subtitle text-sm text-txt-secondary mb-5 leading-relaxed tracking-wide">
               Sprijinim creșterea academică, emoțională și socială a fiecărui copil.
             </p>
-            <h1 class="text-[2.75rem] lg:text-[3.5rem] font-extrabold tracking-tight leading-[1.1] mb-8">
+            <h1 class="text-[2rem] sm:text-[2.75rem] lg:text-[3.5rem] font-extrabold tracking-tight leading-[1.1] mb-8">
               <span class="line-mask"><span>Educație prin</span></span>
               <span class="line-mask"><span>grijă, curiozitate</span></span>
               <span class="line-mask"><span>și <span class="text-accent italic font-extrabold">creativitate</span></span></span>
@@ -128,8 +128,8 @@ export function render(): string {
     <!-- MISSION -->
     <section class="py-24 lg:py-32">
       <div class="w-full max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-          <div class="relative mission-visual" style="min-height: 420px;">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div class="relative mission-visual" style="min-height: 300px;">
             <div class="mission-img-1 w-[65%] aspect-[3/4] rounded-3xl overflow-hidden border border-border">
               <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=600&h=800&fit=crop" alt="Activități școlare" class="w-full h-full object-cover">
             </div>
@@ -150,18 +150,18 @@ export function render(): string {
             </div>
             <p class="text-sm text-txt-secondary leading-relaxed mb-6 mission-text">Gimnaziul Tudor Deliu este un spațiu plin de viață unde copiii explorează, descoperă și cresc cu încredere. Cultivăm curiozitatea fiecărui elev prin joc, creativitate și ghidare atentă.</p>
             <p class="text-base font-semibold text-charcoal leading-relaxed mb-10 mission-text-bold">Ajutăm copiii să învețe și să crească prin activități creative, bazate pe joc, într-un mediu sigur și încurajator.</p>
-            <div class="grid grid-cols-3 gap-6 pt-8 border-t border-border mission-stats">
+            <div class="grid grid-cols-3 gap-3 sm:gap-6 pt-8 border-t border-border mission-stats">
               <div>
-                <span class="text-3xl font-extrabold text-accent counter" data-target="98">0</span><span class="text-3xl font-extrabold text-accent">%</span>
-                <p class="text-xs text-txt-secondary mt-1 font-medium">Părinți mulțumiți</p>
+                <span class="text-2xl sm:text-3xl font-extrabold text-accent counter" data-target="98">0</span><span class="text-2xl sm:text-3xl font-extrabold text-accent">%</span>
+                <p class="text-[10px] sm:text-xs text-txt-secondary mt-1 font-medium">Părinți mulțumiți</p>
               </div>
               <div>
-                <span class="text-3xl font-extrabold text-accent counter" data-target="38">0</span><span class="text-3xl font-extrabold text-accent">+</span>
-                <p class="text-xs text-txt-secondary mt-1 font-medium">Cadre didactice</p>
+                <span class="text-2xl sm:text-3xl font-extrabold text-accent counter" data-target="38">0</span><span class="text-2xl sm:text-3xl font-extrabold text-accent">+</span>
+                <p class="text-[10px] sm:text-xs text-txt-secondary mt-1 font-medium">Cadre didactice</p>
               </div>
               <div>
-                <span class="text-3xl font-extrabold text-accent counter" data-target="420">0</span>
-                <p class="text-xs text-txt-secondary mt-1 font-medium">Elevi formați anual</p>
+                <span class="text-2xl sm:text-3xl font-extrabold text-accent counter" data-target="420">0</span>
+                <p class="text-[10px] sm:text-xs text-txt-secondary mt-1 font-medium">Elevi formați anual</p>
               </div>
             </div>
           </div>
@@ -172,7 +172,7 @@ export function render(): string {
     <!-- FEATURES -->
     <section class="py-24 bg-cream">
       <div class="w-full max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16 items-start">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           <div class="stagger-fade lg:sticky lg:top-24">
             <span class="text-xs font-semibold tracking-widest uppercase text-accent mb-3 block">Ce ne face speciali</span>
             <h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight mb-5">
@@ -205,11 +205,11 @@ export function render(): string {
     <!-- STATS BAND -->
     <section class="py-20 bg-accent text-white">
       <div class="w-full max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div class="stat-item"><span class="text-4xl lg:text-5xl font-extrabold counter-white" data-target="30">0</span><span class="text-4xl lg:text-5xl font-extrabold">+</span><p class="text-sm mt-2 text-white/60 font-medium">Ani de tradiție</p></div>
-          <div class="stat-item"><span class="text-4xl lg:text-5xl font-extrabold counter-white" data-target="420">0</span><p class="text-sm mt-2 text-white/60 font-medium">Elevi înscriși</p></div>
-          <div class="stat-item"><span class="text-4xl lg:text-5xl font-extrabold counter-white" data-target="50">0</span><span class="text-4xl lg:text-5xl font-extrabold">+</span><p class="text-sm mt-2 text-white/60 font-medium">Premii la olimpiade</p></div>
-          <div class="stat-item"><span class="text-4xl lg:text-5xl font-extrabold counter-white" data-target="97">0</span><span class="text-4xl lg:text-5xl font-extrabold">%</span><p class="text-sm mt-2 text-white/60 font-medium">Rata promovării</p></div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 text-center">
+          <div class="stat-item"><span class="text-3xl sm:text-4xl lg:text-5xl font-extrabold counter-white" data-target="30">0</span><span class="text-3xl sm:text-4xl lg:text-5xl font-extrabold">+</span><p class="text-xs sm:text-sm mt-2 text-white/60 font-medium">Ani de tradiție</p></div>
+          <div class="stat-item"><span class="text-3xl sm:text-4xl lg:text-5xl font-extrabold counter-white" data-target="420">0</span><p class="text-xs sm:text-sm mt-2 text-white/60 font-medium">Elevi înscriși</p></div>
+          <div class="stat-item"><span class="text-3xl sm:text-4xl lg:text-5xl font-extrabold counter-white" data-target="50">0</span><span class="text-3xl sm:text-4xl lg:text-5xl font-extrabold">+</span><p class="text-xs sm:text-sm mt-2 text-white/60 font-medium">Premii la olimpiade</p></div>
+          <div class="stat-item"><span class="text-3xl sm:text-4xl lg:text-5xl font-extrabold counter-white" data-target="97">0</span><span class="text-3xl sm:text-4xl lg:text-5xl font-extrabold">%</span><p class="text-xs sm:text-sm mt-2 text-white/60 font-medium">Rata promovării</p></div>
         </div>
       </div>
     </section>

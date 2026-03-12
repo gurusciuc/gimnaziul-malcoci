@@ -32,15 +32,18 @@ html.lenis, html.lenis body { height: auto; }
   -webkit-backdrop-filter: blur(14px);
 }
 
-.mobile-nav-panel {
-  position: fixed; top: 3.5rem; left: 0; right: 0;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(14px);
-  padding: 1.5rem 1.5rem 2rem;
-  display: none; flex-direction: column; gap: 1rem;
-  border-bottom: 1px solid var(--color-border);
+.mobile-menu-overlay {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(20, 20, 20, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
 }
-.mobile-nav-panel.open { display: flex; }
+.mobile-menu-overlay.open { opacity: 1; visibility: visible; }
+.mobile-menu-link {
+  transition: opacity 0.35s ease, transform 0.35s ease, color 0.2s ease;
+}
 
 /* ====== Cursor Glow ====== */
 .cursor-glow {
@@ -145,10 +148,11 @@ input:focus, textarea:focus, select:focus {
 
 /* ====== Responsive ====== */
 @media (max-width: 768px) {
-  .hero-collage { min-height: 350px !important; }
+  .hero-collage { min-height: 300px !important; }
   .hero-img-main { width: 55% !important; left: 2% !important; }
   .hero-img-tr { width: 42% !important; right: 0 !important; top: 0 !important; }
   .hero-img-br { width: 44% !important; right: 2% !important; }
+  .mission-visual { min-height: 260px !important; }
 }
 
 /* ====== Selection ====== */

@@ -13,7 +13,7 @@ export function render(): string {
       <div class="w-full max-w-7xl mx-auto px-6">
         <div class="max-w-2xl mx-auto text-center stagger-fade">
           <span class="text-xs font-semibold tracking-widest uppercase text-accent mb-3 block">Contact</span>
-          <h1 class="text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-5">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-5">
             Suntem <span class="text-accent italic">aici</span> pentru tine
           </h1>
           <p class="text-base text-txt-secondary leading-relaxed max-w-lg mx-auto">Ai întrebări? Vrei să ne vizitezi? Scrie-ne sau sună-ne oricând.</p>
@@ -24,7 +24,7 @@ export function render(): string {
     <!-- Contact Info + Form -->
     <section class="py-24 lg:py-32">
       <div class="w-full max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16">
 
           <!-- Left: contact info -->
           <div>
@@ -90,7 +90,7 @@ export function render(): string {
     <!-- Map -->
     <section class="pb-24">
       <div class="w-full max-w-7xl mx-auto px-6">
-        <div class="rounded-2xl overflow-hidden border border-border map-container" style="height: 400px;">
+        <div class="rounded-2xl overflow-hidden border border-border map-container h-64 sm:h-80 md:h-[400px]">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.8!2d28.8358!3d47.0245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDAxJzI4LjIiTiAyOMKwNTAnMDkuMCJF!5e0!3m2!1sen!2smd!4v1" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
